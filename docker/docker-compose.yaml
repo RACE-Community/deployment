@@ -7,9 +7,9 @@ services:
     ports:
       - "8545:8545"
     volumes:
-      - ./datadir:/datadir
-      - ./jwt.txt:/jwt.txt
-      - ./genesis.json:/genesis.json
+      - ./../datadir:/datadir
+      - ./../jwt.txt:/jwt.txt
+      - ./../genesis.json:/genesis.json
     command: >
       --datadir /datadir
       --http
@@ -39,8 +39,8 @@ services:
       - "8547:8547"
     restart: always
     volumes:
-      - ./jwt.txt:/jwt.txt
-      - ./rollup.json:/rollup.json
+      - ./../jwt.txt:/jwt.txt
+      - ./../rollup.json:/rollup.json
     command: >
       op-node
       --l2=http://op-geth:8551
@@ -65,8 +65,8 @@ services:
       - "8547:8547"
     restart: always
     volumes:
-      - ./jwt.txt:/jwt.txt
-      - ./rollup.json:/rollup.json
+      - ./../jwt.txt:/jwt.txt
+      - ./../rollup.json:/rollup.json
     command: >
       op-node
       --l2=http://op-geth:8551
